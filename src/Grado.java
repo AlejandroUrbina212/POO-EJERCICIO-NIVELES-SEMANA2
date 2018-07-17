@@ -1,9 +1,10 @@
-import java.util.ArrayList;
+
 import java.util.Arrays;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Grado {
     private String Name_Grado = "Default";
-    private ArrayList<Object> Students = new ArrayList<>();
+    CopyOnWriteArrayList<Estudiante> Students = new CopyOnWriteArrayList<>();
 
     //SETTERS AND GETTERS
 
@@ -16,12 +17,16 @@ public class Grado {
         Name_Grado = name_Grado;
     }
 
-    public ArrayList<Object> getStudents() {
+    public CopyOnWriteArrayList<Estudiante> getStudents() {
         return Students;
     }
 
-    public void setStudents(ArrayList<Object> students) {
+    public void setStudents(CopyOnWriteArrayList<Estudiante> students) {
         Students = students;
+    }
+    public void addStudent(Estudiante estudiante){
+        this.Students.add(estudiante);
+
     }
 
     //CONSTRUCTOR

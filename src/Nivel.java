@@ -1,10 +1,10 @@
-import java.util.ArrayList;
+
 import java.util.Arrays;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Nivel {
-    private String Name = "Default";
-    private ArrayList<Object> Grados = new ArrayList<>();
-
+    private String Name;
+    private CopyOnWriteArrayList<Grado> Grados = new CopyOnWriteArrayList<Grado>();
     // SETTERS AND GETTERS
 
 
@@ -16,13 +16,18 @@ public class Nivel {
         Name = name;
     }
 
-    public ArrayList<Object> getGrados() {
+    public CopyOnWriteArrayList<Grado> getGrados() {
         return Grados;
     }
 
-    public void setGrados(ArrayList<Object> grados) {
+    public void setGrados(CopyOnWriteArrayList<Grado> grados) {
         Grados = grados;
     }
+
+    public void addGrado(Grado grado){
+        this.Grados.add(grado);
+    }
+
 
     //CONSTRUCTOR
     public Nivel (String nombre){
